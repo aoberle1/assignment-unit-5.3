@@ -1,4 +1,5 @@
 console.log('***** Music Collection *****')
+// creating empty collection array
 let collection = [];
 
 // creating addToCollection function
@@ -25,16 +26,19 @@ addToCollection( 'Nightflight to Venus', 'Boney M', 1978 );
 
 // ... spread operator lists out each item in the array by default
 // showing everything in the collection array using the console log
+console.log( collection );
 console.log( ...collection );
+console.log( collection.length );
 
 // Creating function showCollection
-// tried using collection instead of array, length was undefined?
-function showCollection( collection ){
-    for ( let i = 0; i < collection.length; i++ ){
-        console.log( title.collection[i], 'by', artist.collection[i], 'in', yearPublished.collection[i] );
+function showCollection( showInput ){
+    for ( let i = 0; i < showInput.length; i++ ){
+        console.log( (showInput[i].title), 'by', showInput[i].artist, 'in', showInput[i].yearPublished )
     }
+    console.log( `There are ${showInput.length} albums in our collection!`);
+
 }
 // end showCollection function
 
 
-showCollection( collection )
+showCollection( collection );
