@@ -39,6 +39,16 @@ function showCollection( showInput ){
 
 }
 // end showCollection function
-
-
 showCollection( collection );
+
+function findByArtist( findArtist ){
+    let searchedArtist = []
+    for ( i = 0; i < collection.length; i++ ){
+        if ( collection[i].artist === findArtist ){
+            searchedArtist.push ( collection[i] )
+        }
+    }
+    return searchedArtist
+}
+console.log(findByArtist( 'Daft Punk' ));
+
