@@ -4,15 +4,15 @@ let collection = [];
 
 // creating addToCollection function
 function addToCollection( title, artist, yearPublished ){
-    // addToCollection creates album object using parameters defined in function
+    // running addToCollection function creates album object using parameters defined in function
     let album = {
         title: title,
         artist: artist,
         yearPublished: yearPublished
     }
+    // moving album created using function arguments to collection array created previously
     collection.push( album );
-    console.log( `We have added ${ title } by ${ artist } to our collection!`);
-    
+    console.log( `We have added ${ title } by ${ artist } to our collection!`);    
 }
 // end of addToCollection function
 
@@ -32,23 +32,36 @@ console.log( collection.length );
 
 // Creating function showCollection
 function showCollection( showInput ){
+    // for loop running through array (using function argument name)
     for ( let i = 0; i < showInput.length; i++ ){
+        // at each index point in the loop [i] we are console logging TITLE by ARTIST in YEAR using .operator and object properties defined earlier
         console.log( (showInput[i].title), 'by', showInput[i].artist, 'in', showInput[i].yearPublished )
     }
+    // console log to show how many albums are in the collection, located outside for loops so only runs once
     console.log( `There are ${showInput.length} albums in our collection!`);
-
 }
 // end showCollection function
+
+// calling showCallection function using collection array created previously
+// logs each index on own line as TITLE by ARTIST in YEAR
+// logs the number of albums in collection array
 showCollection( collection );
 
+// creating findByArtist function using argument findArtist
 function findByArtist( findArtist ){
-    let searchedArtist = []
+    // creating empty searchedArtists array using findByArtist function
+    let searchedArtists = []
+    // for loop to loop through indexes of collection array
     for ( i = 0; i < collection.length; i++ ){
+        // if name of artist in index (album) of collection array matches findArtist function argument
+        // function will push the index at that point to the created searchedArtists array
         if ( collection[i].artist === findArtist ){
-            searchedArtist.push ( collection[i] )
+            searchedArtists.push ( collection[i] )
         }
     }
-    return searchedArtist
+    // function will return searchedArtists array
+    return searchedArtists
 }
+// console log will return the searchedArtists array by running findByArtist function
 console.log(findByArtist( 'Daft Punk' ));
 
