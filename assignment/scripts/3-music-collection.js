@@ -19,3 +19,6 @@ addToCollection( 'The Grey Album', 'Danger Mouse', 2004 );
 addToCollection( 'Discovery', 'Daft Punk', 2001 );
 addToCollection( 'Fear', 'Toad the Wet Sprocket', 1991 );
 addToCollection( 'Nightflight to Venus', 'Boney M', 1978 );
+
+// ... spread operator lists out each item in the array by default
+console.log( ...collection );
