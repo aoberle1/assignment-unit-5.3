@@ -62,6 +62,7 @@ function findByArtist( findArtist ){
     // function will return searchedArtists array
     return searchedArtists
 }
-// console log will return the searchedArtists array by running findByArtist function
+// console log will log the return of the searchedArtists array by running findByArtist function
+// argument of findByArtist is name of the artist we are searching for
 console.log(findByArtist( 'Daft Punk' ));
 
