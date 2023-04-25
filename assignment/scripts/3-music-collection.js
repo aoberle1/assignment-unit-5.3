@@ -2,8 +2,7 @@ console.log('***** Music Collection *****')
 let collection = [];
 
 function addToCollection( title, artist, yearPublished ){
-    // creating properties for albums using this.,
-    //this. is referring to the object we are creating in the function addToCollection
+    // addToCollection creates album object using parameters defined in function
     let album = {
         title: title,
         artist: artist,
@@ -15,3 +14,8 @@ function addToCollection( title, artist, yearPublished ){
 }
 
 addToCollection( 'Hello Rockview', 'Less Than Jake', 1998 );
+addToCollection( 'The New Danger', 'Mos Def', 2004 );
+addToCollection( 'The Grey Album', 'Danger Mouse', 2004 );
+addToCollection( 'Discovery', 'Daft Punk', 2001 );
+addToCollection( 'Fear', 'Toad the Wet Sprocket', 1991 );
+addToCollection( 'Nightflight to Venus', 'Boney M', 1978 );
