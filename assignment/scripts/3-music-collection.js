@@ -69,4 +69,10 @@ console.log(findByArtist( 'Daft Punk' ));
 
 function search ( artistSearch, yearPublishedSearch ){
     let searchMatchArray = [];
+    for ( i = 0; i < collection.length; i++ ){
+        if (collection[i].artist === artistSearch && collection[i].yearPublished === yearPublishedSearch ){
+            searchMatchArray.push ( collection[i] )
+        }
+    }
+    return searchMatchArray
 }
