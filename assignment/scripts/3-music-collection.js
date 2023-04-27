@@ -26,6 +26,7 @@ addToCollection( 'Nightflight to Venus', 'Boney M', 1978 );
 
 // ... spread operator lists out each item in the array by default
 // showing everything in the collection array using the console log
+// showing difference between spread operator and standard
 console.log( collection );
 console.log( ...collection );
 console.log( collection.length );
@@ -35,7 +36,7 @@ function showCollection( showInput ){
     // for loop running through array (using function argument name)
     for ( let i = 0; i < showInput.length; i++ ){
         // at each index point in the loop [i] we are console logging TITLE by ARTIST in YEAR using .operator and object properties defined earlier
-        console.log( (showInput[i].title), 'by', showInput[i].artist, 'in', showInput[i].yearPublished )
+        console.log( (showInput[i].title), 'by', showInput[i].artist, 'in', showInput[i].yearPublished );
     }
     // console log to show how many albums are in the collection, located outside for loops so only runs once
     console.log( `There are ${showInput.length} albums in our collection!`);
@@ -49,20 +50,23 @@ showCollection( collection );
 
 // creating findByArtist function using argument findArtist
 function findByArtist( findArtist ){
-    // creating empty searchedArtists array using findByArtist function
-    let searchedArtists = []
+    // creating empty foundArtists array inside findByArtist function
+    let foundArtists = [];
     // for loop to loop through indexes of collection array
     for ( i = 0; i < collection.length; i++ ){
         // if name of artist in index (album) of collection array matches findArtist function argument
         // function will push the index at that point to the created searchedArtists array
         if ( collection[i].artist === findArtist ){
-            searchedArtists.push ( collection[i] )
+            foundArtists.push ( collection[i] )
         }
     }
-    // function will return searchedArtists array
-    return searchedArtists
+    // function will return foundArtists array
+    return foundArtists;
 }
-// console log will log the return of the searchedArtists array by running findByArtist function
+// console log will log the return of the foundArtists array by running findByArtist function
 // argument of findByArtist is name of the artist we are searching for
 console.log(findByArtist( 'Daft Punk' ));
 
+function search ( artistSearch, yearPublishedSearch ){
+    let searchMatchArray = [];
+}
