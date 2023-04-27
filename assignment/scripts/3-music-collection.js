@@ -67,12 +67,24 @@ function findByArtist( findArtist ){
 // argument of findByArtist is name of the artist we are searching for
 console.log(findByArtist( 'Daft Punk' ));
 
-function search ( artistSearch, yearPublishedSearch ){
+// creating search function
+function search ( artist, yearPublished ){
+    // empty array to catch search matches
     let searchMatchArray = [];
+    // for loop to cycle through all indexes in collection array
     for ( i = 0; i < collection.length; i++ ){
-        if (collection[i].artist === artistSearch && collection[i].yearPublished === yearPublishedSearch ){
+        // if statement to push search matches into searchMatchArray
+        if (collection[i].artist === artist && collection[i].yearPublished === yearPublished ){
             searchMatchArray.push ( collection[i] )
         }
+        // else if that determines if search arguments are empty and returns the full collection if they are
+        else if ( artist === "" && yearPublished === ""){
+            return collection
+        }
     }
+    // returning searchMatchArray outside for loop otherwise for loop will only run once before return stops it
     return searchMatchArray
 }
+
+// successfully returns empty array, does not return full collection with empty search objects
+console.log(search());
