@@ -53,7 +53,7 @@ function findByArtist( findArtist ){
     // creating empty foundArtists array inside findByArtist function
     let foundArtists = [];
     // for loop to loop through indexes of collection array
-    for ( i = 0; i < collection.length; i++ ){
+    for ( let i = 0; i < collection.length; i++ ){
         // if name of artist in index (album) of collection array matches findArtist function argument
         // function will push the index at that point to the created searchedArtists array
         if ( collection[i].artist === findArtist ){
@@ -67,26 +67,26 @@ function findByArtist( findArtist ){
 // argument of findByArtist is name of the artist we are searching for
 console.log(findByArtist( 'Daft Punk' ));
 
-// creating search function
-function search ( artist, yearPublished ){
+// creating search function with object searchParameters
+function search ( searchParameters ){
+    // if statement for if the searchParameters are undefined or falsy
+    if ( !searchParameters ){
+        return collection
+    }
     // empty array to catch search matches
     let searchMatchArray = [];
     // for loop to cycle through all indexes in collection array
-    for ( i = 0; i < collection.length; i++ ){
+    for ( let i = 0; i < collection.length; i++ ){
         // if statement to push search matches into searchMatchArray
-        if (collection[i].artist === artist && collection[i].yearPublished === yearPublished ){
+        if (collection[i].artist === searchParameters.artist && collection[i].yearPublished === searchParameters.yearPublished ){
             searchMatchArray.push ( collection[i] )
-        }
-        // else if that determines if search arguments are empty and returns the full collection if they are
-        else if ( artist === "" && yearPublished === ""){
-            return collection
         }
     }
     // returning searchMatchArray outside for loop otherwise for loop will only run once before return stops it
-    return searchMatchArray
+    return searchMatchArray;
 }
 
-// successfully returns empty array, does not return full collection with empty search objects
+// console logging search function with empty search parameters, returns full collection
 console.log(search());
 // console logging search function with parameters included, returns correct result
-console.log(search( 'Mos Def', 2004 ));
+console.log(search( { artist: 'Mos Def', yearPublished: 2004 } ) );
