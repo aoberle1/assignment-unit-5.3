@@ -88,3 +88,5 @@ function search ( artist, yearPublished ){
 
 // successfully returns empty array, does not return full collection with empty search objects
 console.log(search());
+// console logging search function with parameters included, returns correct result
+console.log(search( 'Mos Def', 2004 ));
